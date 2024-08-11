@@ -1,0 +1,20 @@
+{% extends "appoperaciones/base.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block title %} MICROFONISTAS {% endblock %}
+{% comment %} {% block main %}
+
+    <form action="/microfonistasformulario/" method="POST">{% csrf_token %}
+        
+        <p>Nombre: <input type="text" name="nombre"></p>
+        <p>Apellido: <input type="text" name="apellido"></p>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+{% endblock main %} {% endcomment %}
+
+<h1>Aca estaran listado todos los Microfonistas</h1>
+{% endblock %}

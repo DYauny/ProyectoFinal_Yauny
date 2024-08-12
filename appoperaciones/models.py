@@ -5,7 +5,7 @@ from django.db import models
 class Asistentes(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
-    legajo= models.CharField(max_length=30)
+    legajo= models.IntegerField()
     
     
     def __str__(self):
@@ -14,12 +14,12 @@ class Asistentes(models.Model):
 class Camarografos(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
-    legajo= models.CharField(max_length=30)  
+    legajo= models.IntegerField()  
     
 
 class Microfonistas(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
-    legajo= models.CharField(max_length=30)
+    legajo= models.IntegerField()
     
 

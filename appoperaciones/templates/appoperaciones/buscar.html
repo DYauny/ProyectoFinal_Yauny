@@ -1,0 +1,16 @@
+{% extends 'appoperaciones/base.html' %}
+
+{% load static %}
+
+{% block title %} Buscar Apellido {% endblock title %}
+
+{% block main %}
+    <form action="/appoperaciones/buscar" method="GET">
+
+        <input type="char" name="apellido">
+        <input type="submit" value="Enviar">
+
+    </form>
+{% endblock main %}
+
+

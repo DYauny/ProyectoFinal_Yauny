@@ -8,4 +8,5 @@ class AsistenteFormulario(forms.Form):
       
       
 class BuscaAsistenteForm(forms.Form):
-    asistente = forms.IntegerField()
+    nombre = forms.CharField()
+    apellido = forms.IntegerField()

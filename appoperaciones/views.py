@@ -26,7 +26,7 @@ def form_con_api(request):
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
 
-            asistente = Asistentes(nombre=informacion["nombre"], apellido=informacion["apellido"])
+            asistente = Asistentes(nombre=informacion["nombre"], apellido=informacion["apellido"], legajo=informacion["legajo"])
             asistente.save()
 
             return render(request, "appoperaciones/inicio.html")
@@ -37,41 +37,29 @@ def form_con_api(request):
 
 
 
-def busquedaapellido(request):
-    return render(request, "appoperaciones/busquedaapellido.html")
-
-def buscar(request):
-      respuesta = F"Estoy buscando el apellido: {request.GET['apellido']}"
-      
-      return HttpResponse(respuesta)
-
+# def busquedaapellido(request):
+#     return render(request, "appoperaciones/busquedaapellido.html")
 
 # def buscar(request):
-#     if request.method == "POST":
-#         miFormulario = BuscaAsistenteForm(request.POST) # Aqui me llega la informacion del html
+#       respuesta = F"Estoy buscando el apellido: {request.GET['apellido']}"
+      
+#       return HttpResponse(respuesta)
 
-#         if miFormulario.is_valid():
-#             informacion = miFormulario.cleaned_data
+
+def buscar(request):
+    if request.method == "POST":
+        miFormulario = BuscaAsistenteForm(request.POST) # Aqui me llega la informacion del html
+
+        if miFormulario.is_valid():
+            informacion = miFormulario.cleaned_data
             
-#             asistentes = Asistentes.objects.filter(nombre__icontains=informacion["asistente"])
+            asistente = Asistentes.objects.filter(nombre__icontains=informacion["nombre"], apellido_incontains=informacion["apellido"])
 
-#             return render(request, "appoperaciones/mostrar_asistentes.html", {"asistentes": asistentes})
-#     else:
-#         miFormulario = BuscaAsistenteForm()
+            return render(request, "appoperaciones/resultado.html", {"asistentes": asistente})
+    else:
+        miFormulario = BuscaAsistenteForm()
 
-#     return render(request, "appoperaciones/buscar_form_con_api.html", {"miFormulario": miFormulario})
+    return render(request, "appoperaciones/busqueda", {"miFormulario": miFormulario})
 
 
 
-# from appoperaciones.models import Asistentes
-
-# def asistentesFormulario(request):
-    
-#     if request.method == 'POST':
-        
-#         asistentes = Asistentes (nombre=request.POST['nombre'],apellido=request.POST['apellido'])
-#         asistentes.save()
-        
-#         return render (request, "appoperaciones/inicio.html")
-    
-#     return render(request, "appoperaciones/asistentesformulario.html")

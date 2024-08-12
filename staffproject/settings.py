@@ -55,7 +55,7 @@ ROOT_URLCONF = 'staffproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates/appoperacones"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

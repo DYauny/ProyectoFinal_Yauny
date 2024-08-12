@@ -1,0 +1,17 @@
+{% extends 'appoperaciones/base.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+    <!-- action: representa la url a la que nos va a re-dirigir. Tiene prioridad
+    por sobre la redirección que podamos colocar en views.py -->
+    <ul>
+        {% for asistente in asistentes %}
+        <li> {{ asistente.nombre }} | {{ asistente.apellido }} </li>
+        {% endfor %}
+    </ul>
+{% endblock main %}
+
+

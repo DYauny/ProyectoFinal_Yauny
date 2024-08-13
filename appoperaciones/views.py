@@ -53,13 +53,20 @@ def buscar(request):
         if miFormulario.is_valid():
             informacion = miFormulario.cleaned_data
             
-            asistente = Asistentes.objects.filter(nombre__icontains=informacion["nombre"], apellido_incontains=informacion["apellido"])
+            print(miFormulario)
+            
+            
+            asistentes = Asistentes.objects.filter(nombre__icontains=informacion["nombre"])
+                                                  #apellido__icontains=informacion["apellido"])
 
-            return render(request, "appoperaciones/resultado.html", {"asistentes": asistente})
+        return render(request, "appoperaciones/resultado.html", {"asistentes": asistentes})
     else:
-        miFormulario = BuscaAsistenteForm()
-
-    return render(request, "appoperaciones/busqueda", {"miFormulario": miFormulario})
+         miFormulario = BuscaAsistenteForm()
+         
+    return render(request, "appoperaciones/busqueda.html", {"miFormulario": miFormulario})
+  
+  
+ 
 
 
 

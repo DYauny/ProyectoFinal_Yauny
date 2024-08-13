@@ -1,5 +1,5 @@
 from django import forms
-from .models import Asistentes
+#from .models import Asistentes
 
 class AsistenteFormulario(forms.Form):
     nombre = forms.CharField()
@@ -8,5 +8,7 @@ class AsistenteFormulario(forms.Form):
       
       
 class BuscaAsistenteForm(forms.Form):
-    nombre = forms.CharField()
-    apellido = forms.IntegerField()
+    
+    nombre = forms.CharField()  
+    Apellido = forms.CharField()  
+    

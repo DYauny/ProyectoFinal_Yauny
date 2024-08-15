@@ -1,0 +1,16 @@
+{% extends "appoperaciones/base.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block title %} Eliminar Asistente: {% endblock %}
+
+    <form action="" method="POST">
+       {% csrf_token %}
+       <a href="{%  url 'Lista' %}">Volver</a>
+        <p> Estás seguro que queres eliminar al asistente: {{asistente.nombre}}</p>
+      
+       <input type="submit" value="Borrar">
+
+    </form>
+
+{% endblock %}

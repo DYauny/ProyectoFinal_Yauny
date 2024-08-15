@@ -9,6 +9,6 @@ class AsistenteFormulario(forms.Form):
       
 class BuscaAsistenteForm(forms.Form):
     
-    nombre = forms.CharField()  
-    Apellido = forms.CharField()  
+    nombre = forms.CharField()
+    apellido = forms.CharField()  
     

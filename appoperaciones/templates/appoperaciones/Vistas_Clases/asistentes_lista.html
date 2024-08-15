@@ -1,0 +1,18 @@
+{% extends 'appoperaciones/base.html' %}
+
+
+{% block contenidoQueCambia %}
+
+  {% block title %} ASISTENTES {% endblock %}
+
+
+      <ul>
+         {% for asistente in asistentes %}
+         <p>{{ asistente.nombre }} {{ asistente.apellido }} | {{ asistente.legajo }}</p>
+         <a href="{%  url 'ActualizarAsistente' asistente.pk %}">Actualizar</a>
+         <a href="{%  url 'EliminarAsistente' asistente.pk %}">Eliminar</a>
+        {% endfor %}
+      </ul>
+               
+{% endblock  %}
+

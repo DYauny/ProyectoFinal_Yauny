@@ -22,11 +22,17 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'asistentes' %}">Asistentes</a>
+                <a class="navbar-brand" href="{% url 'nosotros' %}">Nosotros</a>
+                <a class="navbar-brand" href="{% url 'Lista' %}">Asistentes</a> 
                 <a class="navbar-brand" href="{% url 'camarografos' %}">Camarografos</a>
-                <a class="navbar-brand" href="{% url 'microfonistas' %}">Microfonistas</a>
+                <a class="navbar-brand" href="{% url 'microfonistas' %}">Microfonistas</a> 
+                <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>
+                <a class="btn btn-primary" href="{% url 'Register' %}">Registro</a>
+                <a class="btn btn-primary" href="{% url 'Logout' %}">Logout</a>
+                 
                 
             </div>
+
         </nav>
         <!-- Masthead-->
         <header class="masthead">
@@ -80,6 +86,8 @@
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><a href="{% url 'inicio' %}">Inicio</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="{% url 'nosotros' %}">Nosotros</a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="{% url 'asistentes' %}">Asistentes</a></li>
                             <li class="list-inline-item">⋅</li>

@@ -2,10 +2,13 @@
 
 {% block contenidoQueCambia %}
 
-{% block title %} MICROFONISTAS {% endblock %}
+{% block title %} Microfonista {% endblock %}
+
+
+
 {% comment %} {% block main %}
 
-    <form action="/microfonistasformulario/" method="POST">{% csrf_token %}
+    <form action="/camarografosformulario/" method="POST">{% csrf_token %}
         
         <p>Nombre: <input type="text" name="nombre"></p>
         <p>Apellido: <input type="text" name="apellido"></p>
@@ -16,5 +19,5 @@
 
 {% endblock main %} {% endcomment %}
 
-<h1>Aca estaran listado todos los Microfonistas</h1>
+<h1>Aca estaran listado todos los microfonista</h1>
 {% endblock %}

@@ -1,11 +1,23 @@
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 from appoperaciones.models import Asistentes
 from appoperaciones.forms import AsistenteFormulario, BuscaAsistenteForm
-from django.http import HttpResponse
+
+
+
 
 # Create your views here.
 def inicio(request):
     return render(request, "appoperaciones/inicio.html")
+
+
+@login_required
+def nosotros(request):
+    return render(request, "appoperaciones/nosotros.html")
+
 
 def asistentes(request):
     return render(request, "appoperaciones/asistentes.html")
@@ -56,7 +68,7 @@ def buscar(request):
             print(miFormulario)
             
             
-            asistentes = Asistentes.objects.filter(nombre__icontains=informacion["nombre"])
+            asistentes = Asistentes.objects.filter(apellido__icontains=informacion["apellido"])
                                                   #apellido__icontains=informacion["apellido"])
 
         return render(request, "appoperaciones/resultado.html", {"asistentes": asistentes})

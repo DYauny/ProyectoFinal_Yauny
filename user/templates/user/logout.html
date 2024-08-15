@@ -1,0 +1,26 @@
+{% extends 'appoperaciones/base.html' %}
+
+
+{% block contenidoQueCambia %}
+
+{% block title %} LOGOUT {% endblock title %}
+
+    
+
+{% endblock %}
+
+
+
+
+{% comment %} <div class="d-flex justify-content-center">
+
+        
+    <div class="d-flex flex-column">            
+        
+        <form method= "post" action="{% url 'user/logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+
+    </div>
+</div> {% endcomment %}

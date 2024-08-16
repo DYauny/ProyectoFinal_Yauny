@@ -6,12 +6,12 @@
 
 {% block title %} DETALLES {% endblock title %}
 
-<p>Nombre: <i>{{ camarografo.nombre }}</i></p>
-<p>Apellido: <i>{{ camarografo.apellido }}</i></p>
-<p>Legajo: <i>{{ camarografo.legajo }}</i></p>
+<p>Nombre: <i>{{ camarografos.nombre }}</i></p>
+<p>Apellido: <i>{{ camarografos.apellido }}</i></p>
+<p>Legajo: <i>{{ camarografos.legajo }}</i></p>
 
 <p>
-    <a href="{% url 'CamarografoLista' %}">Regresar</a>
+    <a href="{% url 'CamarografoLista' %}">Volver</a>
 </p>
 
 {% endblock %}

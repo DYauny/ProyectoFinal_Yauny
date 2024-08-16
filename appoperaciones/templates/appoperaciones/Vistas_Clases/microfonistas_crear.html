@@ -6,6 +6,7 @@
 
     <form action="" method="POST">
        {% csrf_token %}
+       <a href="{%  url 'MicrofonistaLista' %}">Volver</a>
        <table>
         {{ form.as_table }}
        </table>

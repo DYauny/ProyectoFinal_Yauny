@@ -1,0 +1,17 @@
+{% extends 'appoperaciones/base.html' %}
+
+
+
+{% block contenidoQueCambia %}
+
+{% block title %} DETALLES {% endblock title %}
+
+<p>Nombre: <i>{{ camarografo.nombre }}</i></p>
+<p>Apellido: <i>{{ camarografo.apellido }}</i></p>
+<p>Legajo: <i>{{ camarografo.legajo }}</i></p>
+
+<p>
+    <a href="{% url 'CamarografoLista' %}">Regresar</a>
+</p>
+
+{% endblock %}

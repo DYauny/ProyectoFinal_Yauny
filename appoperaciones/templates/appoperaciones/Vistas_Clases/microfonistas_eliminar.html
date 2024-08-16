@@ -1,0 +1,16 @@
+{% extends "appoperaciones/base.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block title %} Eliminar Microfonista: {% endblock %}
+
+    <form action="" method="POST">
+       {% csrf_token %}
+       <a href="{%  url 'MicrofonistaLista' %}">Volver</a>
+        <p> Estás seguro que queres eliminar al Microfonista: {{microfonista.nombre}}</p>
+      
+       <input type="submit" value="Borrar">
+
+    </form>
+
+{% endblock %}

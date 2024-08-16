@@ -1,0 +1,16 @@
+{% extends "appoperaciones/base.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block title %} Eliminar Camarografo: {% endblock %}
+
+    <form action="" method="POST">
+       {% csrf_token %}
+       <a href="{%  url 'CamarografoLista' %}">Volver</a>
+        <p> Estás seguro que queres eliminar al camarografo: {{camarografo.nombre}}</p>
+      
+       <input type="submit" value="Borrar">
+
+    </form>
+
+{% endblock %}

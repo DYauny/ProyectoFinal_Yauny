@@ -1,0 +1,16 @@
+{% extends "appoperaciones/base.html" %}
+
+{% block contenidoQueCambia %}
+
+{% block title %} Actualiza los datos del Microfonista: {% endblock %}
+
+    <form action="" method="POST">
+       {% csrf_token %}
+       <table>
+        {{ form.as_table }}
+       </table>
+       <input type="submit" value="Enviar">
+
+    </form>
+
+{% endblock %}

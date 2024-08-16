@@ -1,0 +1,17 @@
+{% extends 'appoperaciones/base.html' %}
+
+
+
+{% block contenidoQueCambia %}
+
+{% block title %} DETALLES {% endblock title %}
+
+<p>Nombre: <i>{{ asistentes.nombre }}</i></p>
+<p>Apellido: <i>{{ asistentes.apellido }}</i></p>
+<p>Legajo: <i>{{ asistentes.legajo }}</i></p>
+
+<p>
+    <a href="{% url 'Lista' %}">Regresar</a>
+</p>
+
+{% endblock %}

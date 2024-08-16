@@ -1,0 +1,17 @@
+{% extends 'appoperaciones/base.html' %}
+
+
+
+{% block contenidoQueCambia %}
+
+{% block title %} DETALLES {% endblock title %}
+
+<p>Nombre: <i>{{ microfonistas.nombre }}</i></p>
+<p>Apellido: <i>{{ microfonistas.apellido }}</i></p>
+<p>Legajo: <i>{{ microfonistas.legajo }}</i></p>
+
+<p>
+    <a href="{% url 'MicrofonistaLista' %}">Regresar</a>
+</p>
+
+{% endblock %}

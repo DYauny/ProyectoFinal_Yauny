@@ -1,0 +1,35 @@
+{% extends 'appoperaciones/base.html' %}
+
+{% block title %} EDITAR PERFIL {% endblock title %}
+
+{% block contenidoQueCambia %}
+
+
+
+    
+    <div class="d-flex justify-content-center">
+
+        
+        <div class="d-flex flex-column">
+            
+
+            <form action="" method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                <table>
+                
+                   {{ form.as_table }}
+
+                </table>
+
+                <button type='button'>
+                            <a class="navbar-brand" href="{% url 'cambiarcontrasenia' %}">Cambiar Contraseña</a>
+                </button>
+
+                <input type="submit" value="Actualizar">
+                
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

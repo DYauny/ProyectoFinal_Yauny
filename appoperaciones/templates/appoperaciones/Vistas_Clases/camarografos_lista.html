@@ -1,0 +1,29 @@
+{% extends 'appoperaciones/base.html' %}
+
+
+{% block contenidoQueCambia %}
+
+  {% block title %} CAMAROGRAFOS {% endblock %}
+
+  <div class="row">
+    {% for camarografo in camarografos %}
+        <div class="card" style="width: 18rem;" >
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">APELLIDO: {{ camarografo.apellido }}</h5>
+            <p class="card-text">NOMBRE: {{ camarografo.nombre }}</p>
+            <p class="card-text">LEGAJO: {{ camarografo.legajo }}</p>
+            <a href="{% url 'CamarografoDetalles' camarografo.id %}" class="btn btn-primary">Ver</a>
+            {% if request.user.is_superuser %}
+            <a href="{% url 'CamarografoActualizar' camarografo.id %}" class="btn btn-primary">Editar</a>
+            <a href="{% url 'CamarografoEliminar' camarografo.id %}" class="btn btn-primary">Borrar</a>
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'CamarografoCrear' %}">Agregar nuevo</a>
+
+               
+{% endblock  %}

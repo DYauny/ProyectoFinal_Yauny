@@ -5,14 +5,32 @@
 
   {% block title %} ASISTENTES {% endblock %}
 
+  <div class="row">
+    {% for asistente in asistentes %}
+        <div class="card" style="width: 18rem;" >
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">APELLIDO: {{ asistente.apellido }}</h5>
+            <p class="card-text">NOMBRE: {{ asistente.nombre }}</p>
+            <p class="card-text"> LEGAJO: {{ asistente.legajo }}</p>
+            <a href="{% url 'Detalles' asistente.id %}" class="btn btn-primary">Ver</a>
+            {% if request.user.is_superuser %}
+            <a href="{% url 'ActualizarAsistente' asistente.id %}" class="btn btn-primary">Editar</a>
+            <a href="{% url 'EliminarAsistente' asistente.id %}" class="btn btn-primary">Borrar</a>
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
-      <ul>
-         {% for asistente in asistentes %}
-         <p>{{ asistente.nombre }} {{ asistente.apellido }} | {{ asistente.legajo }}</p>
-         <a href="{%  url 'ActualizarAsistente' asistente.pk %}">Actualizar</a>
-         <a href="{%  url 'EliminarAsistente' asistente.pk %}">Eliminar</a>
-        {% endfor %}
-      </ul>
+<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'CrearAsistente' %}">Agregar nuevo</a>
+
                
 {% endblock  %}
+
+
+
+
+
+
 
